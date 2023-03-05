@@ -1,0 +1,49 @@
+return f"Person({self.first_name}, {self.last_name}, {self.date_of_birth})"
+
+class Account(Person):
+    def __init__(self, person):
+    def __init__(self, person, site):
+        super().__init__(person.first_name, person.last_name, person.date_of_birth)
+        self.login = person.first_name[0].lower()+person.last_name.lower()
+
+        base_login = person.first_name[0].lower()+person.last_name.lower()
+        mod_login =base_login
+        index=1
+        while mod_login in site.logins():
+            mod_login=base_login+str(index)
+            index+=1
+        self.login=mod_login
+class Site():
+    def __init__(self):
+        self.accounts={}
+@@ -103,8 +108,8 @@ def main():
+    # people=filter_by_last_name(people,"ko no")
+    site=Site()
+    for person in people:
+        site.add(Account(person))
+    print(site.get("acolbert"))
+        site.add(Account(person,site))
+    #print(site.get("acolbert"))
+    print(site.logins())
+        #print(Account(person))
+    # arr=[2, 7, 19, -5, -26]
+16
+people.csv
+@@ -1,15 +1,3 @@
+Peri,Teddman,1970-03-23
+Coral,Tengdin,1911-10-21
+Petronia,Posner,1993-01-07
+Asia,Dex,1958-03-14
+Kial,Toffic,1998-07-25
+Marnia,Tippets,2009-08-08
+Anestassia,Bryna,1959-09-12
+Alexine,Israeli,1916-04-15
+Annaliese,Colbert,1926-06-01
+Ottilie,Laurianne,1957-03-13
+Feliza,Wu,1910-02-09
+Carilyn,Charity,1990-12-27
+Carmencita,Nowak,1990-06-03
+Ilse,Kononowicz,2010-03-03
+Xylina,Kowalski,1968-01-31
+Xylina,Kowalski,1968-01-31
+Xylina,Kowalski,1968-01-31 
