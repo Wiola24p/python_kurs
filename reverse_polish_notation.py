@@ -41,12 +41,4 @@ def solve(postfix):
             if c=="/":
                 stack.append(left/right)
     return stack.pop()
-#import reverse_polish_notation as rpn
-from reverse_polish_notation import *
 
-def main():
-    print(rvp("((2 + 7) /3 + (8 - 3)*4)/2"))
-    print(solve("2 7 + 3 / 14 3 - 4 * + 2 /"))
-
-if __name__== "__main__":
-    main()
