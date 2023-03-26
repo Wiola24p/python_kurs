@@ -1,14 +1,29 @@
-from PySide2.QtWidgets import QWidget, QPushButton
+from PySide2.QtWidgets import QWidget, QPushButton, QLineEdit,\
+    QLabel, QVBoxLayout
+
+
+class QLinieEdit:
+    pass
+
 
 class MainWidget(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Main widget")
 
-        button = QPushButton("Press me!", self)
+        button = QPushButton("Press me!",self)
         button.clicked.connect(self.onButtonClicked)
+
+        self.edit = QLinieEdit(self)
+        #self.label = QLabel("tekst", self)
+
+        layout = QVBoxLayout(self)
+        layout = addWidget(self.edit)
+        #layout = addWidget(self.label)
+        layout = addWidget(button)
 
 
     def onButtonClicked(self):
-        #print("Clicked!")
-        self.close()
+       editText =self.edit.text()
+       #self.label.setText(editText)
+       QMessageBox.information(self, "Info", editText)
