@@ -2,7 +2,7 @@ import turtle
 def apply(c):
     if c=="A":
         return "B-A-B"
-    elif c=="B:"
+    elif c=="B":
         return"A+B+A"
     else:
         return c
@@ -28,7 +28,7 @@ def draw_l_system(t,instructions, angle, lenght):
             t.right(angle)
         elif c=="+":
             t.left(angle)
-   t.pu()
+            t.pu()
             t.goto(position)
             t.setheading(heading)
             t.pd()

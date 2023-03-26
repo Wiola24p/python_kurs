@@ -1,4 +1,3 @@
-import simple_draw as sd
 from l_system import draw
 
 def main():
