@@ -1,10 +1,10 @@
 from PySide2.QtWidgets import QApplication, QWidget, QPushButton
-from mainwidget import MainWidget
+from mainwindow import MainWindow
 
 def main():
     app = QApplication([])
 
-    window = MainWidget()
+    window = MainWindow()
     window.show()
 
 
